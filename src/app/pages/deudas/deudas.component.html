@@ -1,0 +1,27 @@
+<h1>Deudas</h1>
+
+<form>
+    <table>
+        <tr>
+            <td>Código</td>
+            <td><input type="number" name="txtCodigo" [(ngModel)]="deuda.codigo"></td>
+        </tr>
+    </table>
+    <button (click)="guardar()">Guardar</button>
+</form>
+
+<hr/>
+
+<table>
+    <tr>
+        <th>Código</th>
+        <th>Monto</th>
+        <th>fechaEmision</th>
+    </tr>
+    <tr *ngFor="let deu of deudas | async">
+        <td>{{deu.codigo}}</td>
+        <td>{{deu.monto}}</td>
+        <td>{{deu.fechaEmision}}</td>
+    </tr>
+
+</table>
